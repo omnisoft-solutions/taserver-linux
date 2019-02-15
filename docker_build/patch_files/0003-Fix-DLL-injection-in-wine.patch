@@ -1,0 +1,67 @@
+# Copyright (c) 2019 Michael Vilim
+#
+# This file is part of the taserver-linux library. It is currently hosted at
+# https://github.com/mvilim/taserver-linux
+#
+# taserver-linux is licensed under the AGPL. A copy of the license can be
+# found in the root folder of the project.
+
+From 6c524f3c1930aaf5eedfa5fbf254cc5ba9c13e80 Mon Sep 17 00:00:00 2001
+From: Michael Vilim <michael.vilim@gmail.com>
+Date: Fri, 15 Feb 2019 09:01:23 -0600
+Subject: [PATCH 3/4] Fix DLL injection in wine
+
+---
+ game_server_launcher/inject.py | 29 +++++++++++++----------------
+ 1 file changed, 13 insertions(+), 16 deletions(-)
+
+diff --git a/game_server_launcher/inject.py b/game_server_launcher/inject.py
+index 2fc92ee..2bb3e4a 100644
+--- a/game_server_launcher/inject.py
++++ b/game_server_launcher/inject.py
+@@ -96,21 +96,18 @@ def inject(pid, path_to_dll):
+             raise InjectionFailedError('Failed to initialize dbghelp dll')
+ 
+         # Get the address of LoadLibraryA
+-        MAX_SYM_NAME_LENGTH = 40
+-        pBuffer = ctypes.create_string_buffer(sizeof(SYMBOL_INFO) + MAX_SYM_NAME_LENGTH)
+-        pLoadLibrarySymInfo = cast(pBuffer, POINTER(SYMBOL_INFO))
+-        pLoadLibrarySymInfo.contents.SizeOfStruct = sizeof(SYMBOL_INFO)
+-        pLoadLibrarySymInfo.contents.MaxNameLen = MAX_SYM_NAME_LENGTH
+-
+-        dbghelp.SymFromName.argtypes = [HANDLE, LPCSTR, POINTER(SYMBOL_INFO)]
+-        dbghelp.SymFromName.restype = BOOL
+-        if not dbghelp.SymFromName(process_handle, 'LoadLibraryA'.encode('ascii'), pLoadLibrarySymInfo):
+-            raise InjectionFailedError('Failed to get symbol info for LoadLibraryA function')
+-
+-        dbghelp.SymCleanup.argtypes = [HANDLE]
+-        dbghelp.SymCleanup.restype = BOOL
+-        if not dbghelp.SymCleanup(process_handle):
+-            raise InjectionFailedError('Failed to cleanup after use of dbghelp dll')
++        GetModuleHandleA = kernel32.GetModuleHandleA
++        GetModuleHandleA.argtypes = [LPCSTR]
++        GetModuleHandleA.restype = HMODULE
++
++        GetProcAddress = kernel32.GetProcAddress
++        GetProcAddress.argtypes = [HMODULE, LPCSTR]
++        GetProcAddress.restype = c_void_p
++
++        h_kernel32 = GetModuleHandleA('kernel32'.encode('ascii'))
++        loadliba_address = GetProcAddress(h_kernel32, 'LoadLibraryA'.encode('ascii'))
++        if not loadliba_address:
++            raise InjectionFailedError('Failed to get address of LoadLibraryA')
+ 
+         # Allocate memory in the process for the DLL path, and then write it there
+         path_to_dll_bytes = path_to_dll.encode('ascii') + b'\0'
+@@ -138,7 +135,7 @@ def inject(pid, path_to_dll):
+         remote_thread = CreateRemoteThreadFunc(process_handle,
+                                                None,
+                                                0,
+-                                               pLoadLibrarySymInfo.contents.Address,
++                                               loadliba_address,
+                                                remote_path_space,
+                                                0,
+                                                None)
+-- 
+2.20.1
+
