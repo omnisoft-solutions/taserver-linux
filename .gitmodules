@@ -1,3 +1,4 @@
 [submodule "tamods-server-gotylike"]
 	path = tamods-server-gotylike
 	url = https://github.com/mcoot/tamods-server-gotylike
+	branch = master
