@@ -45,7 +45,8 @@ To run a login server as well as a game server (the login server ip will need to
 By default, the Docker image will be pulled from Docker Hub. To build the image yourself:
 
 ```
-./docker_build/build.sh
+cd docker_build
+./build.sh
 ```
 
 ### Licensing
