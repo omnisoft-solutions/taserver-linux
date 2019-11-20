@@ -2,3 +2,6 @@
 	path = tamods-server-gotylike
 	url = https://github.com/mcoot/tamods-server-gotylike
 	branch = master
+[submodule "taserver"]
+	path = taserver
+	url = https://github.com/mvilim/taserver.git

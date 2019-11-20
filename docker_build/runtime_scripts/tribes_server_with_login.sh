@@ -8,5 +8,7 @@
 # taserver-linux is licensed under the AGPL. A copy of the license can be
 # found in the root folder of the project.
 
+cd taserver
 wine python start_login_server.py&
-./tribes_server
+cd ..
+./tribes_server.sh

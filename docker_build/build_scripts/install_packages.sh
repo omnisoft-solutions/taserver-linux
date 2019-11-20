@@ -8,6 +8,5 @@
 
 # enable multilib
 pacman -Sy --noconfirm grep
-cat /etc/pacman.conf | grep -A 1 \\[multilib\\] | sed 's/\#//g' >> /etc/pacman.conf 
-pacman -Sy --noconfirm vim python python-pip git xorg-server-xvfb wine-staging winetricks
-
+cat /etc/pacman.conf | grep -A 1 \\[multilib\\] | sed 's/\#//g' >> /etc/pacman.conf
+pacman -Sy --noconfirm vim python python-pip git xorg-server-xvfb wine winetricks

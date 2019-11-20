@@ -16,9 +16,11 @@ This repository provides a Docker image for hosting a Tribes Ascend server on Li
 
 ### Running
 
-Docker is the only dependency. It must be installed before you can use this to launch a server.
+Docker and the Tribes game is the only dependency. They must be installed before you can use this to launch a server.
 
-To run a server, you will need to clone this repository recursively (to load the [default GOTY server settings](https://github.com/mcoot/tamods-server-gotylike)):
+The Tribes: Ascend game files must be present in a folder called `tribes_game` in the root of this reop.
+
+To run a server, you will need to clone this repository recursively (to load the [GOTY server settings](https://github.com/mcoot/tamods-server-gotylike) and the taserver):
 
 ```
 git clone --recursive https://github.com/mvilim/taserver-linux
@@ -28,9 +30,9 @@ cd taserver-linux
 
 ### Configuration
 
-By default, the image will run a GOTY-configured server using the configuration in `gameserverlauncher.ini`. This .ini file will be merged with the default .ini from the original taserver.
+By default, the image will run the original taserver configuration. It can be modified by edting the submodule `taserver/data/gameserverlauncher.ini`).
 
-To modify Tribes server settings, you will need to provide the necessary lua scripts and set the `controller_config` option under `[game_server]`. By default, the GOTY server settings will be used. tamods-server-gotylike/gotylike/serversettings.lua must also be modified to change the default server admin username and password. See the [TA mods server documentation for more info](https://www.tamods.org/docs/doc_srv_api_overview.html).
+The GOTY settings will be mounted inside the docker container, so modifying `controller_config` to `data\gamesettings\gotylike\serverconfig.lua` will enable gotymode as defined in the `tamods-server-goty` submodule.
 
 Because the server runs inside a Docker container, you will need to manually provide an internal ip address for LAN play (using the `internal_ip` option under `[game_server]`).
 

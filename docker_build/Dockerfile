@@ -12,21 +12,13 @@ RUN /root/install_packages.sh
 RUN useradd -m tribes
 WORKDIR /home/tribes
 USER tribes
-COPY build_scripts/install_tribes.sh ./
-RUN ./install_tribes.sh
 ENV WINEPATH "Z:\\home\\tribes\\python37;Z:\\home\\tribes\\python37\\Scripts"
-COPY build_scripts/install_wine.sh ./
-RUN ./install_wine.sh
 COPY build_scripts/install_python.sh ./
 RUN ./install_python.sh
-COPY build_scripts/install_tribes_server.sh ./
-RUN ./install_tribes_server.sh
-WORKDIR /home/tribes/taserver
-COPY patch_files/ ./patch_files/
-RUN git apply ./patch_files/*.patch
-COPY runtime_scripts/merge_ini.py ./
-COPY runtime_scripts/tribes_server ./
-COPY runtime_scripts/tribes_server_with_login ./
-CMD ./tribes_server
+COPY build_scripts/install_wine.sh ./
+RUN ./install_wine.sh
+COPY runtime_scripts/tribes_server.sh ./
+COPY runtime_scripts/tribes_server_with_login.sh ./
+CMD ./tribes_server.sh
 
 EXPOSE 7777/tcp 7777/udp 7778/tcp 7778/udp 9000/tcp 9001/tcp 9002/udp

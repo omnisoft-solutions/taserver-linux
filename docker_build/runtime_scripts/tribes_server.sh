@@ -8,8 +8,17 @@
 # taserver-linux is licensed under the AGPL. A copy of the license can be
 # found in the root folder of the project.
 
-python merge_ini.py data/gameserverlauncher.ini data/gameserverlauncher.ini data/gameserverlauncher_overrides.ini data/runtime_gameserverlauncher.ini
 # Hack to get around "Fatal Python error: _Py_HashRandomization_Init: failed to get random numbers to initialize Python" on startup. Not sure of root cause.
 export PYTHONHASHSEED=$RANDOM
+cd taserver
+
+if [ ! -f TAMods-Server.dll ]; then
+   python download_compatible_controller.py
+fi
+
+if [ ! -f udpproxy.exe ]; then
+   python download_udpproxy.py
+fi
+
 wine python start_taserver_firewall.py&
 wine python start_game_server_launcher.py
