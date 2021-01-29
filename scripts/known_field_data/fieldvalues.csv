@@ -1,0 +1,195 @@
+7422,Light Spinfusor
+7425,Bolt Launcher
+7438,Light Assault Rifle
+7419,Falcon
+7433,Sparrow
+7399,Shotgun
+7435,Shocklance
+8761,Light Grenade Launcher
+7387,Impact Nitron
+7437,Explosive Nitron
+7822,Thrust Pack
+7825,Light Energy Pack
+7834,Pathfinder Skin
+7835,Infiltrator Skin
+8327,Sentinel Skin
+8337,Inf Assassin Skin
+8336,Inf Mercenary Skin
+8665,Sen Spectre Skin
+8326,Pth Freerunner Skin
+8666,Light Voice
+1683,Light Class
+1686,Sentinel Class
+7401,Spinfusor
+7461,Thumper
+7385,Assault Rifle
+7384,Arx Buster
+7416,Grenade Launcher
+7832,Shield Pack
+7434,AP Grenades
+8328,Soldier Skin
+8330,Raider Skin
+8329,Technician Skin
+8748,Sld Synthrall Skin
+8731,Tcn Specialist Skin
+8351,Rdr Griever Skin
+8352,Rdr Mercenary Skin
+8667,Medium Voice
+1693,Medium Class
+7448,Heavy Spinfusor
+7458,X1 LMG
+7386,Chaingun
+7393,Fusion Mortar
+7826,Heavy Shield Pack
+7390,Frag Grenades
+7455,Light Sticky Grenades
+8331,Juggernaut Skin
+8332,Doombringer Skin
+8333,Brute Skin
+8745,Jug Forlorn Skin
+8744,Dmb Executioner Skin
+8663,Brt Mr T Skin
+8668,Heavy Voice
+1692,Heavy Class
+8670,Femme Fatale Voice
+8671,Ms Wilderzone Voice
+8695,Disker Dundee Voice
+8669,Battleworn Voice
+8747,TotalBiscuit Voice
+8749,Stowaway Voice
+8167,Survivalist Perk
+8162,Safe Fall Perk
+8232,Rage Perk
+11126, Light Impact Weapon Category
+11142, Light Timed Weapon Category
+11128, Light Speciality Weapon Category
+11127, Light Bullet Weapon Category
+11129, Light Short Range Weapon Category
+11131, Medium Impact Weapon Category
+11133, Medium Timed Weapon Category
+11135, Medium Speciality Weapon Category
+11132, Medium Bullet Weapon Category
+11143, Medium Short Range Weapon Category
+11136, Heavy Impact Weapon Category
+11139, Heavy Timed Weapon Category
+11141, Heavy Speciality Weapon Category
+11137, Heavy Bullet Weapon Category
+11138, Heavy Short Range Weapon Category
+0x0000043E,Primary weapon loadout item
+0x0000043F,Secondary weapon loadout item
+0x00000440,Pack loadout item
+0x00000441,Belt loadout item
+0x00000445,Skin loadout item
+0x00000446,Voice loadout item
+0x00000447,Class loadout item
+0x00000466,Move forward
+0x00000467,Move backward
+0x00000468,Strafe left
+0x00000469,Strafe right
+0x0000046A,Ski
+0x0000046B,Jump
+0x0000046C,Jetpack
+0x0000046D,Jump/Jetpack
+0x0000046E,Jump/Ski
+0x0000046F,Toggle ski
+0x00000470,Zoom
+0x00000471,Fire
+0x00000472,Reload
+0x00000473,Last weapon
+0x00000474,Previous weapon
+0x00000475,Next weapon
+0x00000476,Interact
+0x00000477,Melee
+0x00000478,Use pack
+0x00000479,Use belt
+0x0000047A,Class select
+0x0000047B,Toggle scoreboard
+0x0000047C,Toggle objectives
+0x0000047D,Drop flag
+0x0000047E,Chat
+0x0000047F,Team chat
+0x00000480,Horn
+0x00000481,Begin VGS
+0x00000482,Call-in 1
+0x00000483,Call-in 2
+0x00000484,Call-in 3
+0x00000485,Quick console
+0x00000486,Swap to slot 1
+0x00000487,Swap to slot 2
+0x00000488,Swap to seat 1
+0x00000489,Swap to seat 2
+0x0000048A,Swap to seat 3
+0x0000048B,Swap to seat 4
+0x0000048C,Swap to seat 5
+0x0000048D,Swap to seat 6
+0x0000048E,Suicide
+0x0000048F,Spot target
+0x00000490,Third-person cam
+0x00000491,Free look
+0x00000492,Change team
+0x00000493,Suppress help message
+0x00000494,Friends
+0x00000495,Settings
+0x00000496,Main/Game menu
+0x00000497,Pathfinder hotkey
+0x00000498,Sentinel hotkey
+0x00000499,Infiltrator hotkey
+0x0000049A,Soldier hotkey
+0x0000049B,Raider hotkey
+0x0000049C,Technician hotkey
+0x0000049D,Juggernaut hotkey
+0x0000049E,Doombringer hotkey
+0x0000049F,Brute hotkey
+0x000004A0,Spectator move up
+0x000004A1,Spectator move down
+0x000004A2,Spectator move forward
+0x000004A3,Spectator move backward
+0x000004A4,Spectator turn left
+0x000004A5,Spectator turn right
+0x000004A6,Spectator strafe left
+0x000004A7,Spectator strafe right
+0x000004A8,Spectator camera X
+0x000004A9,Spectator camera Y
+0x000004AA,Spectator speed increase
+0x000004AB,Spectator speed decrease
+0x000004AC,Spectator view next player
+0x000004AD,Spectator view prev player
+0x000004AE,Spectator view self
+0x000004AE,Spectator view bookmarks
+0x000004B0,Spectator view generators
+0x000004B1,Spectator view flag stands
+0x000004B2,Spectator view flags
+0x000004B3,Spectator show controls
+0x000004B4,Spectator show hud
+0x000004B5,Spectator show scores
+0x000004B6,Spectator quick console
+0x000004B7,Spectator choose team
+0x000004B8,Spectator show vehicle tab
+0x000004B9,Spectator view fastest player
+0x000004BA,Spectator show objective tab
+0x000004BB,Mouse sensitivity
+0x000004BC,Flying pitch sensitivity
+0x000004BD,Flying yaw sensitivity
+0x000004BE,Mouse invert
+0x000004BF,Vehicle invert
+0x000004C0,Mouse smoothing
+0x000004C1,FoV
+0x000004C2,Toggle zoom
+0x000004C3,Show help text
+0x000004C4,Default objectives on
+0x000004C5,Reduced weapon size
+0x000004C6,Damage numbers
+0x000004C7,Filter chat
+0x000004C8,Master volume
+0x000004C9,Effects volume
+0x000004CA,Music volume
+0x000004CC,Announcer volume
+0x000004CE,Friend login/logout notification
+0x000004F3,Reply to tell
+0x000004F7,Private chat notification
+0x0000053B,Chat console
+0x0000053C,Loadout index loadout item
+0x0000053D,Loadout name loadout item
+0x00000556,Spectator lock view to player
+0x000006E5,Tertiary weapon loadout item
+0x000006E7,Swap to slot 3
